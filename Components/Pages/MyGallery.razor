@@ -1,9 +1,19 @@
 ﻿@page "/my-gallery"
+@using SomeDataServices
+
+@inject Class1 SomeDataServices
 
 @rendermode InteractiveAuto
+
 
 <h3>MyGallery</h3>
 
 @code {
+     private string[] data;
 
+    protected override async Task OnInitializedAsync()
+    {
+        data = await SomeDataServices.GetDataAsync();
+    }
 }
+
