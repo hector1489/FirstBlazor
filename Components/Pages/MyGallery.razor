@@ -1,7 +1,8 @@
 ﻿@page "/my-gallery"
+
 @using SomeDataServices
 
-@inject Class1 SomeDataServices
+@inject RickAndMortyService SomeDataServices
 
 @rendermode InteractiveAuto
 
@@ -9,11 +10,21 @@
 <h3>MyGallery</h3>
 
 @code {
-     private string[] data;
+    private string personajesJson;
 
     protected override async Task OnInitializedAsync()
     {
-        data = await SomeDataServices.GetDataAsync();
+        var personajesService = new RickAndMortyService(HttpClient);
+        personajesJson = await personajesService.ObtenerPersonajes();
     }
+}
+
+@if (!string.IsNullOrEmpty(personajesJson))
+{
+    <pre>@personajesJson</pre>
+}
+else
+{
+    <p>Error al obtener los datos de la API.</p>
 }
 

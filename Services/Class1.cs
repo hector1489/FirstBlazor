@@ -1,10 +1,28 @@
-﻿namespace SomeDataServices;
+﻿using System.Net.Http;
+using System.Threading.Tasks;
 
-public class Class1
+namespace SomeDataServices
 {
-    public async Task<string[]> GetDataAsync()
+    public class RickAndMortyService
     {
-        //fetchdata
+        private readonly HttpClient _httpClient;
 
+        public RickAndMortyService(HttpClient httpClient)
+        {
+            _httpClient = httpClient;
+        }
+
+        public async Task<string> ObtenerPersonajes()
+        {
+            HttpResponseMessage response = await _httpClient.GetAsync("https://rickandmortyapi.com/api/character");
+            if (response.IsSuccessStatusCode)
+            {
+                return await response.Content.ReadAsStringAsync();
+            }
+            else
+            {
+                return null;
+            }
+        }
     }
 }
