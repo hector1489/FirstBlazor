@@ -28,3 +28,6 @@
 /home/hector/Documentos/cursos/microsoft/firstBlazor/BlazorApp/obj/Debug/net8.0/BlazorApp.pdb
 /home/hector/Documentos/cursos/microsoft/firstBlazor/BlazorApp/obj/Debug/net8.0/BlazorApp.genruntimeconfig.cache
 /home/hector/Documentos/cursos/microsoft/firstBlazor/BlazorApp/obj/Debug/net8.0/ref/BlazorApp.dll
+/home/hector/Documentos/cursos/microsoft/firstBlazor/BlazorApp/bin/Debug/net8.0/Components/data.json
+/home/hector/Documentos/cursos/microsoft/firstBlazor/BlazorApp/bin/Debug/net8.0/Services/obj/project.assets.json
+/home/hector/Documentos/cursos/microsoft/firstBlazor/BlazorApp/bin/Debug/net8.0/Services/obj/SomeDataServices.csproj.nuget.dgspec.json
